@@ -33,7 +33,7 @@ public interface Constants {
     String FIELD_PAY_COUNT = "payCount";
     String FIELD_CATEGORY_ID = "categoryid";
 
-
+    String SESSION_COUNT = "Session_count";
     String TIME_PERIOD_1s_3s = "1s_3s";
     String TIME_PERIOD_4s_6s = "4s_6s";
     String TIME_PERIOD_7s_9s = "7s_9s";
