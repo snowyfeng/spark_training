@@ -4,8 +4,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.snowyfeng.spark_training.conf.ConfigurationManager;
 import com.snowyfeng.spark_training.constants.Constants;
 import com.snowyfeng.spark_training.dao.SessionAggrStatDao;
+import com.snowyfeng.spark_training.dao.SessionRandomExtractDao;
 import com.snowyfeng.spark_training.dao.TaskDao;
 import com.snowyfeng.spark_training.domains.SessionAggrStat;
+import com.snowyfeng.spark_training.domains.SessionRandomExtract;
 import com.snowyfeng.spark_training.factory.DAOFactory;
 import com.snowyfeng.spark_training.domains.Task;
 import com.snowyfeng.spark_training.test.MockData;
@@ -19,14 +21,15 @@ import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
+import org.apache.spark.api.java.function.PairFlatMapFunction;
 import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SQLContext;
+import org.apache.spark.sql.execution.datasources.jdbc.JDBCRDD;
 import org.apache.spark.sql.hive.HiveContext;
 import scala.Tuple2;
 
-import java.util.Date;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Created by xuxuefeng on 2016/11/22.
@@ -44,6 +47,7 @@ public class UserSessionsAnalyzeSpark {
         TaskDao taskDao = DAOFactory.getTaskDao();
         Task task = taskDao.findById(taskId);
         MockData.mock(sc, sqlContext);
+        long randomExtractSessionTotalNum = ConfigurationManager.getLong(Constants.RANDOM_EXTRACT_SESSION_TOTAL_NUM);
 
         JSONObject taskParams = JSONObject.parseObject(task.getTaskParam());
 
@@ -58,12 +62,11 @@ public class UserSessionsAnalyzeSpark {
         JavaPairRDD<String, Row> sessionId2DetailRdd = getSession2DetailRDD(filteredSessionRDD, session2ActionRDD);
 
         randomExtractSession(sc, task.getTaskId(),
-                filteredSessionRDD, sessionId2DetailRdd);
+                filteredSessionRDD, sessionId2DetailRdd, randomExtractSessionTotalNum);
 
         calculateAndPersistAggrStat(sessionAggrStatAccumulator.value(), task.getTaskId());
         sc.stop();
     }
-
 
 
     private static SQLContext getSQLContext(JavaSparkContext sc) {
@@ -356,7 +359,81 @@ public class UserSessionsAnalyzeSpark {
 
     }
 
-    private static void randomExtractSession(JavaSparkContext sc, long taskId, JavaPairRDD<String, String> filteredSessionRDD, JavaPairRDD<String, Row> sessionId2DetailRdd) {
+    private static void randomExtractSession(JavaSparkContext sc, final long taskId, JavaPairRDD<String,
+            String> filteredSessionRDD, JavaPairRDD<String, Row> sessionId2DetailRdd, long randomExtractSessionTotalNum) {
+        JavaPairRDD<String, String> startTimeWithHourRDD = filteredSessionRDD.mapToPair(new PairFunction<Tuple2<String, String>, String, String>() {
+
+            private static final long serialVersionUID = 8929630370078150270L;
+
+            @Override
+            public Tuple2<String, String> call(Tuple2<String, String> tuple) throws Exception {
+                String startTime = StringUtils.getFieldFromConcatString(tuple._2, "\\|", Constants.FIELD_START_TIME);
+                String dateHourTime = DateUtils.getDateHour(startTime);
+                return new Tuple2<String, String>(dateHourTime, tuple._2);
+            }
+        });
+
+        Random random = new Random();
+
+        Map<String, Object> dateHourMap = startTimeWithHourRDD.countByKey();
+
+        long totalSessionCount = 0;
+        for (Map.Entry<String, Object> map : dateHourMap.entrySet()) {
+            totalSessionCount += Long.valueOf(map.getValue().toString());
+        }
+        double randomExtractSessionTotalNumRatio = (double) randomExtractSessionTotalNum / (double) totalSessionCount;
+
+        final Map<String, List<Integer>> dateHourWithIndex = new HashMap<String, List<Integer>>();
+        for (Map.Entry<String, Object> map : dateHourMap.entrySet()) {
+            String key = map.getKey();
+            int dateHourTotalCount = Integer.valueOf(dateHourMap.get(key).toString());
+            long value = (long) (Long.valueOf(map.getValue().toString()) * randomExtractSessionTotalNumRatio);
+            List<Integer> indexList = new ArrayList<Integer>();
+            while (indexList.size() < value) {
+                int index = random.nextInt(dateHourTotalCount);
+                if (!indexList.contains(index)) {
+                    indexList.add(index);
+                }
+            }
+            dateHourWithIndex.put(key, indexList);
+        }
+
+
+        JavaPairRDD<String, Iterable<String>> groupByDateHourRDD = startTimeWithHourRDD.groupByKey();
+
+        groupByDateHourRDD.flatMapToPair(new PairFlatMapFunction<Tuple2<String, Iterable<String>>, String, String>() {
+            private static final long serialVersionUID = 621076638546985531L;
+
+            @Override
+            public Iterable<Tuple2<String, String>> call(Tuple2<String, Iterable<String>> tuple) throws Exception {
+                String dayHour = tuple._1;
+                Iterator<String> sessionIterator = tuple._2.iterator();
+                List<Integer> indexList = dateHourWithIndex.get(dayHour);
+                SessionRandomExtractDao sessionRandomExtractDao = DAOFactory.getSessionRandomExtractDao();
+                List<Tuple2<String, String>> extractSessionIds = new ArrayList<Tuple2<String, String>>();
+                int index = 0;
+                while (sessionIterator.hasNext()) {
+                    if (indexList.contains(index)) {
+                        String info = sessionIterator.next();
+                        String startTime = StringUtils.getFieldFromConcatString(info, "\\|", Constants.FIELD_START_TIME);
+                        String sessionId = StringUtils.getFieldFromConcatString(info, "\\|", Constants.FIELD_SESSION_ID);
+                        String seachKeywords = StringUtils.getFieldFromConcatString(info, "\\|", Constants.FIELD_SEARCH_KEYWORDS);
+                        String clickCategory = StringUtils.getFieldFromConcatString(info, "\\|", Constants.FIELD_CLICK_CATEGORY_IDS);
+                        SessionRandomExtract sessionRandomExtract = new SessionRandomExtract();
+                        sessionRandomExtract.setTaskId(taskId);
+                        sessionRandomExtract.setStartTime(startTime);
+                        sessionRandomExtract.setClickCategory(clickCategory);
+                        sessionRandomExtract.setSessionId(sessionId);
+                        sessionRandomExtract.setSeachKeywords(seachKeywords);
+
+                        sessionRandomExtractDao.insert(sessionRandomExtract);
+                        extractSessionIds.add(new Tuple2<String, String>(sessionId, sessionId));
+                    }
+                    index++;
+                }
+                return extractSessionIds;
+            }
+        });
 
 
     }

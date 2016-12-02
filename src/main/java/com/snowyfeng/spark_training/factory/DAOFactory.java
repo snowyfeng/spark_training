@@ -1,8 +1,10 @@
 package com.snowyfeng.spark_training.factory;
 
 import com.snowyfeng.spark_training.dao.SessionAggrStatDao;
+import com.snowyfeng.spark_training.dao.SessionRandomExtractDao;
 import com.snowyfeng.spark_training.dao.TaskDao;
 import com.snowyfeng.spark_training.dao.impl.SessionAggrStatDaoImpl;
+import com.snowyfeng.spark_training.dao.impl.SessionRandomExtractDaoImpl;
 import com.snowyfeng.spark_training.dao.impl.TaskImpl;
 
 /**
@@ -16,5 +18,9 @@ public class DAOFactory {
 
     public static SessionAggrStatDao getSessionAggrStatDao() {
         return new SessionAggrStatDaoImpl();
+    }
+
+    public static SessionRandomExtractDao getSessionRandomExtractDao() {
+        return new SessionRandomExtractDaoImpl();
     }
 }

@@ -1,12 +1,15 @@
 package com.snowyfeng.spark_training.domains;
 
+import java.io.Serializable;
+
 /**
  * session聚合统计
  *
  * @author Administrator
  */
-public class SessionAggrStat {
+public class SessionAggrStat implements Serializable {
 
+    private static final long serialVersionUID = 3178890634369599618L;
     private long taskid;
     private long session_count;
     private double visit_length_1s_3s_ratio;

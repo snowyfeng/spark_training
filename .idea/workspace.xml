@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18b37207-9d11-4c40-8648-b6169380660b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionAggrStatDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/SessionAggrStatDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionAggrStat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/SessionAggrStatAccumulator.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spark_training.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="18b37207-9d11-4c40-8648-b6169380660b" name="Default" comment="xxf&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionRandomExtractDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/SessionRandomExtractDaoImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionRandomExtract.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/constants/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/constants/Constants.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/DAOFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/factory/DAOFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/UserSessionsAnalyzeSpark.java" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/UserSessionsAnalyzeSpark.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionAggrStatDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionAggrStatDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionAggrStat.java" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionAggrStat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/factory/DAOFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/factory/DAOFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/UserSessionsAnalyzeSpark.java" afterPath="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/UserSessionsAnalyzeSpark.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/my.properties" afterPath="$PROJECT_DIR$/src/main/resources/my.properties" />
     </list>
     <ignored path="spark_training.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,24 +38,82 @@
       <file leaf-file-name="UserSessionsAnalyzeSpark.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/UserSessionsAnalyzeSpark.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="361" column="8" selection-start-line="361" selection-start-column="8" selection-end-line="361" selection-end-column="8" />
+            <state relative-caret-position="349">
+              <caret line="433" column="40" selection-start-line="433" selection-start-column="40" selection-end-line="433" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1480563840990" expanded="false" signature="4172:4445" ph="(tuple) → {" />
+                <element signature="e#20691#21239#0" expanded="true" />
+                <element signature="e#21238#21239#0" expanded="true" />
+                <element signature="e#21743#21766#0" expanded="true" />
+                <element signature="e#22129#22138#0" expanded="true" />
+                <element signature="e#22584#24752#0" expanded="true" />
+                <element signature="e#23252#23276#0" expanded="true" />
+                <element signature="e#24751#24752#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAOFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/factory/DAOFactory.java">
+      <file leaf-file-name="SessionRandomExtract.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionRandomExtract.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+            <state relative-caret-position="168">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/constants/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="609">
+              <caret line="68" column="65" selection-start-line="68" selection-start-column="65" selection-end-line="68" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/my.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DateUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/utils/DateUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="86" column="36" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="36" />
               <folding>
-                <element signature="e#494#495#0" expanded="true" />
-                <element signature="e#546#547#0" expanded="true" />
+                <element signature="e#2786#2787#0" expanded="true" />
+                <element signature="e#2824#2825#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionRandomExtractDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionRandomExtractDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionRandomExtractDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/SessionRandomExtractDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,50 +123,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionAggrStatDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionAggrStatDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/SessionAggrStatDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1480562851459" expanded="true" signature="430:501" ph="insert into session_aggr_stat... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JDBCHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/jdbc/JDBCHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="64" column="42" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/Task.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionAggrStat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionAggrStat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -120,11 +132,25 @@
       <file leaf-file-name="SessionAggrStatAccumulator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/SessionAggrStatAccumulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="420">
               <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#473#474#0" expanded="false" />
+                <element signature="e#507#508#0" expanded="false" />
+                <element signature="e#575#576#0" expanded="false" />
+                <element signature="e#609#610#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/TaskDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -152,12 +178,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/conf/ConfigurationManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/SessionAggrStatAccumulator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionAggrStat.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionAggrStat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionAggrStatDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/SessionAggrStatDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionAggrStat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionRandomExtract.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionAggrStatDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionRandomExtractDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/SessionRandomExtractDaoImle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/SessionRandomExtractDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/my.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/factory/DAOFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/UserSessionsAnalyzeSpark.java" />
       </list>
@@ -230,9 +261,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -282,34 +310,8 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="spark_training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spark_training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spark_training" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -425,7 +427,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
+              <option name="myItemId" value="domains" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,17 +457,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
+              <option name="myItemId" value="constants" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -698,6 +699,7 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
@@ -893,6 +895,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -944,12 +952,21 @@
       <updated>1480555828603</updated>
       <workItem from="1480555831647" duration="542000" />
       <workItem from="1480556380235" duration="31000" />
-      <workItem from="1480556505570" duration="7895000" />
+      <workItem from="1480556505570" duration="7942000" />
+      <workItem from="1480642363783" duration="5436000" />
     </task>
+    <task id="LOCAL-00001" summary="xxf&#10;">
+      <created>1480570448013</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1480570448013</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8468000" />
+    <option name="totallyTimeSpent" value="13951000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -972,10 +989,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1452514" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1452514" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20179948" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="643" y="124" width="314" height="612" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27956298" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="643" y="124" width="314" height="612" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4567039" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1015,11 +1032,140 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="xxf&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="xxf&#10;" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/UserSessionsAnalyzeSpark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#20691#21239#0" expanded="true" />
+            <element signature="e#21238#21239#0" expanded="true" />
+            <element signature="e#21743#21766#0" expanded="true" />
+            <element signature="e#22129#22138#0" expanded="true" />
+            <element signature="e#22584#24752#0" expanded="true" />
+            <element signature="e#23252#23276#0" expanded="true" />
+            <element signature="e#24751#24752#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/factory/DAOFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#532#533#0" expanded="false" />
+            <element signature="e#570#571#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionAggrStatDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/SessionAggrStatDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1480570432013" expanded="true" signature="431:502" ph="insert into session_aggr_stat... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/jdbc/JDBCHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="64" column="42" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionAggrStat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1006#1007#0" expanded="false" />
+            <element signature="e#1035#1036#0" expanded="false" />
+            <element signature="e#1077#1078#0" expanded="false" />
+            <element signature="e#1113#1114#0" expanded="false" />
+            <element signature="e#1151#1152#0" expanded="false" />
+            <element signature="e#1187#1188#0" expanded="false" />
+            <element signature="e#1243#1244#0" expanded="false" />
+            <element signature="e#1293#1294#0" expanded="false" />
+            <element signature="e#1344#1345#0" expanded="false" />
+            <element signature="e#1391#1392#0" expanded="false" />
+            <element signature="e#1594#1595#0" expanded="false" />
+            <element signature="e#1641#1642#0" expanded="false" />
+            <element signature="e#1844#1845#0" expanded="false" />
+            <element signature="e#1891#1892#0" expanded="false" />
+            <element signature="e#2096#2097#0" expanded="false" />
+            <element signature="e#2145#2146#0" expanded="false" />
+            <element signature="e#2358#2359#0" expanded="false" />
+            <element signature="e#2407#2408#0" expanded="false" />
+            <element signature="e#2618#2619#0" expanded="false" />
+            <element signature="e#2665#2666#0" expanded="false" />
+            <element signature="e#2869#2870#0" expanded="false" />
+            <element signature="e#2917#2918#0" expanded="false" />
+            <element signature="e#3126#3127#0" expanded="false" />
+            <element signature="e#3175#3176#0" expanded="false" />
+            <element signature="e#3384#3385#0" expanded="false" />
+            <element signature="e#3429#3430#0" expanded="false" />
+            <element signature="e#3621#3622#0" expanded="false" />
+            <element signature="e#3665#3666#0" expanded="false" />
+            <element signature="e#3853#3854#0" expanded="false" />
+            <element signature="e#3897#3898#0" expanded="false" />
+            <element signature="e#4085#4086#0" expanded="false" />
+            <element signature="e#4129#4130#0" expanded="false" />
+            <element signature="e#4319#4320#0" expanded="false" />
+            <element signature="e#4365#4366#0" expanded="false" />
+            <element signature="e#4563#4564#0" expanded="false" />
+            <element signature="e#4609#4610#0" expanded="false" />
+            <element signature="e#4804#4805#0" expanded="false" />
+            <element signature="e#4847#4848#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/SessionAggrStatAccumulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="e#473#474#0" expanded="false" />
+            <element signature="e#507#508#0" expanded="false" />
+            <element signature="e#575#576#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/conf/ConfigurationManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1060,22 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/utils/DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2394">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/constants/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/utils/NumberUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1092,6 +1222,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/jdbc/JDBCHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="64" column="42" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/SessionAggrStatDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1480570432013" expanded="true" signature="431:502" ph="insert into session_aggr_stat... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/Task.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -1102,67 +1251,172 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionAggrStat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/SessionAggrStatAccumulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+        <state relative-caret-position="105">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1006#1007#0" expanded="false" />
+            <element signature="e#1035#1036#0" expanded="false" />
+            <element signature="e#1077#1078#0" expanded="false" />
+            <element signature="e#1113#1114#0" expanded="false" />
+            <element signature="e#1151#1152#0" expanded="false" />
+            <element signature="e#1187#1188#0" expanded="false" />
+            <element signature="e#1243#1244#0" expanded="false" />
+            <element signature="e#1293#1294#0" expanded="false" />
+            <element signature="e#1344#1345#0" expanded="false" />
+            <element signature="e#1391#1392#0" expanded="false" />
+            <element signature="e#1594#1595#0" expanded="false" />
+            <element signature="e#1641#1642#0" expanded="false" />
+            <element signature="e#1844#1845#0" expanded="false" />
+            <element signature="e#1891#1892#0" expanded="false" />
+            <element signature="e#2096#2097#0" expanded="false" />
+            <element signature="e#2145#2146#0" expanded="false" />
+            <element signature="e#2358#2359#0" expanded="false" />
+            <element signature="e#2407#2408#0" expanded="false" />
+            <element signature="e#2618#2619#0" expanded="false" />
+            <element signature="e#2665#2666#0" expanded="false" />
+            <element signature="e#2869#2870#0" expanded="false" />
+            <element signature="e#2917#2918#0" expanded="false" />
+            <element signature="e#3126#3127#0" expanded="false" />
+            <element signature="e#3175#3176#0" expanded="false" />
+            <element signature="e#3384#3385#0" expanded="false" />
+            <element signature="e#3429#3430#0" expanded="false" />
+            <element signature="e#3621#3622#0" expanded="false" />
+            <element signature="e#3665#3666#0" expanded="false" />
+            <element signature="e#3853#3854#0" expanded="false" />
+            <element signature="e#3897#3898#0" expanded="false" />
+            <element signature="e#4085#4086#0" expanded="false" />
+            <element signature="e#4129#4130#0" expanded="false" />
+            <element signature="e#4319#4320#0" expanded="false" />
+            <element signature="e#4365#4366#0" expanded="false" />
+            <element signature="e#4563#4564#0" expanded="false" />
+            <element signature="e#4609#4610#0" expanded="false" />
+            <element signature="e#4804#4805#0" expanded="false" />
+            <element signature="e#4847#4848#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/jdbc/JDBCHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/TaskImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="64" column="42" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="147">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#650#1227#0" expanded="false" />
+            <element signature="e#1226#1227#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/SessionAggrStatDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/TaskDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1480562851459" expanded="true" signature="430:501" ph="insert into session_aggr_stat... " />
-          </folding>
+        <state relative-caret-position="147">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionAggrStatDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/SessionAggrStatAccumulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#473#474#0" expanded="false" />
+            <element signature="e#507#508#0" expanded="false" />
+            <element signature="e#575#576#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/my.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/impl/SessionRandomExtractDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/dao/SessionRandomExtractDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/utils/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="86" column="36" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="36" />
+          <folding>
+            <element signature="e#2786#2787#0" expanded="true" />
+            <element signature="e#2824#2825#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="68" column="65" selection-start-line="68" selection-start-column="65" selection-end-line="68" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/factory/DAOFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        <state relative-caret-position="315">
+          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
           <folding>
-            <element signature="e#494#495#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/domains/SessionRandomExtract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowyfeng/spark_training/spark/session/UserSessionsAnalyzeSpark.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="361" column="8" selection-start-line="361" selection-start-column="8" selection-end-line="361" selection-end-column="8" />
+        <state relative-caret-position="349">
+          <caret line="433" column="40" selection-start-line="433" selection-start-column="40" selection-end-line="433" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1480563840990" expanded="false" signature="4172:4445" ph="(tuple) → {" />
+            <element signature="e#20691#21239#0" expanded="true" />
+            <element signature="e#21238#21239#0" expanded="true" />
+            <element signature="e#21743#21766#0" expanded="true" />
+            <element signature="e#22129#22138#0" expanded="true" />
+            <element signature="e#22584#24752#0" expanded="true" />
+            <element signature="e#23252#23276#0" expanded="true" />
+            <element signature="e#24751#24752#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -6,5 +6,5 @@ import com.snowyfeng.spark_training.domains.SessionAggrStat;
  * Created by xuxuefeng on 2016-12-1.
  */
 public interface SessionAggrStatDao {
-    public void insert(SessionAggrStat sessionAggrStat);
+     void insert(SessionAggrStat sessionAggrStat);
 }

@@ -66,4 +66,5 @@ public interface Constants {
     String PARAM_TARGET_PAGE_FLOW = "targetPageFlow";
 
 
+    String RANDOM_EXTRACT_SESSION_TOTAL_NUM = "random_extract_session_total_num";
 }
