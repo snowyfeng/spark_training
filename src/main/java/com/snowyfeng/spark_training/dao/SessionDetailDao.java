@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface SessionDetailDao {
     void BatchInsert(List<SessionDetail> sessionDetailList);
+
+    void insert(SessionDetail sessionDetail);
 }

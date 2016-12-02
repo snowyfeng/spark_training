@@ -1,13 +1,7 @@
 package com.snowyfeng.spark_training.factory;
 
-import com.snowyfeng.spark_training.dao.SessionAggrStatDao;
-import com.snowyfeng.spark_training.dao.SessionDetailDao;
-import com.snowyfeng.spark_training.dao.SessionRandomExtractDao;
-import com.snowyfeng.spark_training.dao.TaskDao;
-import com.snowyfeng.spark_training.dao.impl.SessionAggrStatDaoImpl;
-import com.snowyfeng.spark_training.dao.impl.SessionDetailDaoImpl;
-import com.snowyfeng.spark_training.dao.impl.SessionRandomExtractDaoImpl;
-import com.snowyfeng.spark_training.dao.impl.TaskImpl;
+import com.snowyfeng.spark_training.dao.*;
+import com.snowyfeng.spark_training.dao.impl.*;
 
 /**
  * Created by xuxuefeng on 2016/11/22.
@@ -28,5 +22,13 @@ public class DAOFactory {
 
     public static SessionDetailDao getSessionDetailDao() {
         return new SessionDetailDaoImpl();
+    }
+
+    public static Top10CategoryDao getTop10CategoryDao() {
+        return new Top10CategoryDaoImpl();
+    }
+
+    public static Top10CategorySessionDao getTop10CategorySessionDao() {
+        return new Top10CategorySessionDaoImpl();
     }
 }
