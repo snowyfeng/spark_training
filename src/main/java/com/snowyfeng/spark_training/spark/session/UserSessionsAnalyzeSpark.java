@@ -4,9 +4,11 @@ import com.alibaba.fastjson.JSONObject;
 import com.snowyfeng.spark_training.conf.ConfigurationManager;
 import com.snowyfeng.spark_training.constants.Constants;
 import com.snowyfeng.spark_training.dao.SessionAggrStatDao;
+import com.snowyfeng.spark_training.dao.SessionDetailDao;
 import com.snowyfeng.spark_training.dao.SessionRandomExtractDao;
 import com.snowyfeng.spark_training.dao.TaskDao;
 import com.snowyfeng.spark_training.domains.SessionAggrStat;
+import com.snowyfeng.spark_training.domains.SessionDetail;
 import com.snowyfeng.spark_training.domains.SessionRandomExtract;
 import com.snowyfeng.spark_training.factory.DAOFactory;
 import com.snowyfeng.spark_training.domains.Task;
@@ -23,6 +25,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.PairFlatMapFunction;
 import org.apache.spark.api.java.function.PairFunction;
+import org.apache.spark.api.java.function.VoidFunction;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SQLContext;
 import org.apache.spark.sql.execution.datasources.jdbc.JDBCRDD;
@@ -401,7 +404,7 @@ public class UserSessionsAnalyzeSpark {
 
         JavaPairRDD<String, Iterable<String>> groupByDateHourRDD = startTimeWithHourRDD.groupByKey();
 
-        groupByDateHourRDD.flatMapToPair(new PairFlatMapFunction<Tuple2<String, Iterable<String>>, String, String>() {
+        JavaPairRDD<String, String> extractSeesionRDD = groupByDateHourRDD.flatMapToPair(new PairFlatMapFunction<Tuple2<String, Iterable<String>>, String, String>() {
             private static final long serialVersionUID = 621076638546985531L;
 
             @Override
@@ -432,6 +435,38 @@ public class UserSessionsAnalyzeSpark {
                     index++;
                 }
                 return extractSessionIds;
+            }
+        });
+
+
+        JavaPairRDD<String, Tuple2<String, Row>> extractSeesionWtihDetailRDD = extractSeesionRDD.join(sessionId2DetailRdd);
+
+        extractSeesionWtihDetailRDD.foreachPartition(new VoidFunction<Iterator<Tuple2<String, Tuple2<String, Row>>>>() {
+            private static final long serialVersionUID = -3626953034949705770L;
+
+            @Override
+            public void call(Iterator<Tuple2<String, Tuple2<String, Row>>> iterator) throws Exception {
+                List<SessionDetail> details = new ArrayList<SessionDetail>();
+                while (iterator.hasNext()) {
+                    Row row = iterator.next()._2._2;
+                    SessionDetail sessionDetail = new SessionDetail();
+                    sessionDetail.setTaskId(taskId);
+                    sessionDetail.setUserId(row.getLong(1));
+                    sessionDetail.setSessionId(row.getString(2));
+                    sessionDetail.setPageId(row.getLong(3));
+                    sessionDetail.setActionTime(row.getString(4));
+                    sessionDetail.setSearchKeyword(row.getString(5));
+                    sessionDetail.setClickCategoryId(row.getLong(6));
+                    sessionDetail.setClickPrductId(row.getLong(7));
+                    sessionDetail.setOrderCategoryId(row.getString(8));
+                    sessionDetail.setOrderProductId(row.getString(9));
+                    sessionDetail.setPayCategoryId(row.getString(10));
+                    sessionDetail.setPayProductId(row.getString(11));
+                    details.add(sessionDetail);
+
+                }
+                SessionDetailDao sessionDetailDao = DAOFactory.getSessionDetailDao();
+                sessionDetailDao.BatchInsert(details);
             }
         });
 
