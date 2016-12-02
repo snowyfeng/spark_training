@@ -420,14 +420,14 @@ public class UserSessionsAnalyzeSpark {
                         String info = sessionIterator.next();
                         String startTime = StringUtils.getFieldFromConcatString(info, "\\|", Constants.FIELD_START_TIME);
                         String sessionId = StringUtils.getFieldFromConcatString(info, "\\|", Constants.FIELD_SESSION_ID);
-                        String seachKeywords = StringUtils.getFieldFromConcatString(info, "\\|", Constants.FIELD_SEARCH_KEYWORDS);
+                        String searchKeywords = StringUtils.getFieldFromConcatString(info, "\\|", Constants.FIELD_SEARCH_KEYWORDS);
                         String clickCategory = StringUtils.getFieldFromConcatString(info, "\\|", Constants.FIELD_CLICK_CATEGORY_IDS);
                         SessionRandomExtract sessionRandomExtract = new SessionRandomExtract();
                         sessionRandomExtract.setTaskId(taskId);
                         sessionRandomExtract.setStartTime(startTime);
                         sessionRandomExtract.setClickCategory(clickCategory);
                         sessionRandomExtract.setSessionId(sessionId);
-                        sessionRandomExtract.setSeachKeywords(seachKeywords);
+                        sessionRandomExtract.setSeachKeywords(searchKeywords);
 
                         sessionRandomExtractDao.insert(sessionRandomExtract);
                         extractSessionIds.add(new Tuple2<String, String>(sessionId, sessionId));
