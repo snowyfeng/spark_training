@@ -37,4 +37,28 @@ public class SessionDetailDaoImpl implements SessionDetailDao {
 
 
     }
+
+    @Override
+    public void insert(SessionDetail sessionDetail) {
+
+        String sql = "insert into session_detail values(?,?,?,?,?,?,?,?,?,?,?,?)";
+
+        JDBCHelper jdbcHelper = JDBCHelper.getInstance();
+
+        jdbcHelper.executeUpdate(sql,new Object[]{
+                sessionDetail.getUserId(),
+                sessionDetail.getSessionId(),
+                sessionDetail.getPageId(),
+                sessionDetail.getActionTime(),
+                sessionDetail.getSearchKeyword(),
+                sessionDetail.getClickCategoryId(),
+                sessionDetail.getClickPrductId(),
+                sessionDetail.getOrderCategoryId(),
+                sessionDetail.getOrderProductId(),
+                sessionDetail.getPayCategoryId(),
+                sessionDetail.getPayProductId()
+        });
+
+
+    }
 }
