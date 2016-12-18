@@ -33,7 +33,7 @@ public class SessionDetailDaoImpl implements SessionDetailDao {
                     sessionDetail.getPayProductId()};
             paramsList.add(params);
         }
-        jdbcHelper.executebatch(sql, paramsList);
+        jdbcHelper.executeBatch(sql, paramsList);
 
 
     }
@@ -44,8 +44,8 @@ public class SessionDetailDaoImpl implements SessionDetailDao {
         String sql = "insert into session_detail values(?,?,?,?,?,?,?,?,?,?,?,?)";
 
         JDBCHelper jdbcHelper = JDBCHelper.getInstance();
-
         jdbcHelper.executeUpdate(sql,new Object[]{
+                sessionDetail.getTaskId(),
                 sessionDetail.getUserId(),
                 sessionDetail.getSessionId(),
                 sessionDetail.getPageId(),

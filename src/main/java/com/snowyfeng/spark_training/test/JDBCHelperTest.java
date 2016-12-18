@@ -17,7 +17,7 @@ public class JDBCHelperTest {
 
         String sqlSelect = "select * from test_user";
 
-        jdbcHelper.executeQuerry(sqlSelect, null, new JDBCHelper.QueryCallback() {
+        jdbcHelper.executeQuery(sqlSelect, null, new JDBCHelper.QueryCallback() {
             @Override
             public void process(ResultSet rs) throws SQLException {
                 while (rs.next()) {

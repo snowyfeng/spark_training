@@ -18,10 +18,11 @@ public class TaskImpl implements TaskDao{
         JDBCHelper jdbcHelper = JDBCHelper.getInstance();
         Object[] params = new Object[]{taskId};
         final Task task = new Task();
-        jdbcHelper.executeQuerry(sql, params, new JDBCHelper.QueryCallback() {
+        jdbcHelper.executeQuery(sql, params, new JDBCHelper.QueryCallback() {
             @Override
             public void process(ResultSet rs) throws SQLException {
                if(rs.next()){
+                   task.setTaskId(rs.getLong(1));
                    task.setTaskName(rs.getString(2));
                    task.setCreateTime(rs.getString(3));
                    task.setStartTime(rs.getString(4));
@@ -34,4 +35,5 @@ public class TaskImpl implements TaskDao{
         });
         return task;
     }
+
 }

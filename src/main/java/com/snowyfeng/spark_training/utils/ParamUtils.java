@@ -1,12 +1,11 @@
 package com.snowyfeng.spark_training.utils;
 
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.snowyfeng.spark_training.conf.ConfigurationManager;
 import com.snowyfeng.spark_training.constants.Constants;
 
-/**
+/**ø
  * 参数工具类
  * @author Administrator
  *
@@ -42,11 +41,12 @@ public class ParamUtils {
 	 * @return 参数
 	 */
 	public static String getParam(JSONObject jsonObject, String field) {
-		JSONArray jsonArray = jsonObject.getJSONArray(field);
-		if(jsonArray != null && jsonArray.size() > 0) {
-			return jsonArray.getString(0);
+
+		String value = jsonObject.getString(field);
+		if(StringUtils.isEmpty(field)){
+			return null;
 		}
-		return null;
+		return value;
 	}
 	
 }

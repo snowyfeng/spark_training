@@ -15,7 +15,7 @@ public interface Constants {
 
     String JDBC_DATASOURCE_SIZE ="jdbc.datasource.size" ;
     String SPARK_LOCAL = "spark.local";
-    String SPARK_APP_NAME_SESSION = "UserSessionsAnalyzeSpark";
+    String SPARK_APP_NAME_SESSION = "UserVisitSessionAnalyzeSpark";
 
 
     String FIELD_SESSION_ID = "sessionid";

@@ -6,34 +6,34 @@ import java.io.Serializable;
  * Created by xuxuefeng on 2016-12-2.
  */
 public class SessionDetail implements Serializable {
-    private static final long serialVersionUID = 6252157585901007065L;
+    private static final Long serialVersionUID = 6252157585901007065L;
 
-    private long taskId;
-    private long UserId;
+    private Long taskId;
+    private Long UserId;
     private String sessionId;
     private Long pageId;
     private String actionTime;
     private String searchKeyword;
-    private long clickCategoryId;
-    private long clickPrductId;
+    private Long clickCategoryId;
+    private Long clickPrductId;
     private String orderCategoryId;
     private String orderProductId;
     private String payCategoryId;
     private String payProductId;
 
-    public long getTaskId() {
+    public Long getTaskId() {
         return taskId;
     }
 
-    public void setTaskId(long taskId) {
+    public void setTaskId(Long taskId) {
         this.taskId = taskId;
     }
 
-    public long getUserId() {
+    public Long getUserId() {
         return UserId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(Long userId) {
         UserId = userId;
     }
 
@@ -69,19 +69,19 @@ public class SessionDetail implements Serializable {
         this.searchKeyword = searchKeyword;
     }
 
-    public long getClickCategoryId() {
+    public Long getClickCategoryId() {
         return clickCategoryId;
     }
 
-    public void setClickCategoryId(long clickCategoryId) {
+    public void setClickCategoryId(Long clickCategoryId) {
         this.clickCategoryId = clickCategoryId;
     }
 
-    public long getClickPrductId() {
+    public Long getClickPrductId() {
         return clickPrductId;
     }
 
-    public void setClickPrductId(long clickPrductId) {
+    public void setClickPrductId(Long clickPrductId) {
         this.clickPrductId = clickPrductId;
     }
 
